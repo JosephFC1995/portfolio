@@ -1,0 +1,253 @@
+body {
+    font-family: Poppins;
+    overflow-x: hidden;
+}
+
+.page-enter-active,
+.page-leave-active {
+    transition: opacity 0.5s;
+}
+
+.page-enter,
+.page-leave-to {
+    opacity: 0;
+}
+
+.logo-portfolio {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+header {
+    padding: 0 4rem;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+section {
+    padding-bottom: 2rem;
+    @media ( max-width: 768px) {
+        padding: 2rem 1rem;
+    }
+    &.section {
+        &-quiensoy {
+            @media ( max-width: 768px) {
+                padding: 0 1rem;
+                .quiensoy-name {
+                    min-height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }
+        }
+        &-bienvenida {
+            min-height: calc(100vh - 150px);
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.grillas {
+    position: fixed;
+    width: 100%;
+    .grid-line {
+        height: 0vh;
+        border-left: 1px solid rgb(255 255 255 / 0.1);
+        &:last-child {
+            border-right: 1px solid rgb(255 255 255 / 0.1);
+        }
+        &.up {
+            height: 100vh;
+            transition: height 1.2s ease;
+        }
+    }
+}
+
+.title-grand {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 108px;
+    @media ( max-width: 768px) {
+        font-size: 56px;
+        line-height: 84px;
+    }
+    span {
+        line-height: 108px;
+        &.outline {
+            box-sizing: border-box;
+            color: transparent;
+            -webkit-text-stroke: 1px #fff;
+            @media ( max-width: 768px) {
+                font-size: 56px;
+                line-height: 84px;
+            }
+        }
+    }
+}
+
+.mask-water-title {
+    height: 300px;
+    @media ( max-width: 768px) {
+        height: 150px;
+    }
+    &::after {
+        content: attr(title);
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 200px;
+        line-height: 300px;
+        color: rgba(255, 255, 255, 0.05);
+        position: absolute;
+    }
+    span {
+        &.block {
+            pointer-events: none;
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 200px;
+            line-height: 300px;
+            color: rgba(255, 255, 255, 0.05);
+            position: absolute;
+            @media ( max-width: 768px) {
+                font-size: 60px;
+                line-height: 200px;
+            }
+        }
+    }
+    &.mask-right {
+        span {
+            &.block {
+                right: 0px;
+            }
+        }
+        &:after {
+            right: 0;
+        }
+    }
+    &.mask-left {
+        &:after {
+            left: 0;
+        }
+        span {
+            &.block {
+                left: 0px;
+            }
+        }
+    }
+}
+
+.text-simple {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    @media ( max-width: 768px) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.btn-simple {
+    &.animation {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+        background: transparent none repeat scroll 0 0;
+        padding: 10px 0 10px 0;
+        position: relative;
+        border-left: medium none;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        line-height: 20px;
+        display: block;
+        overflow: hidden;
+        -webkit-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+        @media ( max-width: 768px) {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}
+
+.btn-light {
+    font-style: normal;
+    font-size: 16px;
+    position: relative;
+    border-left: medium none;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    line-height: 20px;
+    overflow: hidden;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    color: #000;
+    background: #fff;
+    border-radius: 4px;
+    display: flex;
+    padding: 17px 25px;
+    @media ( max-width: 768px) {
+        font-size: 14px;
+        line-height: 24px;
+        border-radius: 4px;
+        display: flex;
+        padding: 13px 20px;
+    }
+}
+
+.blog {
+    &-list {
+        margin: 1rem 0;
+        padding: 1rem 0;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            margin-bottom: 0!important;
+            padding-bottom: 0!important;
+        }
+        &:first-child {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        transition: opacity 0.35s;
+        &.active {
+            opacity: 1 !important;
+        }
+    }
+    &-date {
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 50px;
+    }
+    &-title {
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 48px;
+        @media (max-width: 768px) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+    &-categories {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 21px;
+    }
+    &.selected-now {
+        .blog-list {
+            opacity: 0.3;
+        }
+    }
+}
