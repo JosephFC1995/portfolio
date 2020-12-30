@@ -1,1 +1,37 @@
-{"name":"portfolio-josefc","version":"1.0.0","private":true,"scripts":{"dev":"nuxt","build":"nuxt build","start":"nuxt start","generate":"nuxt generate"},"dependencies":{"@iconscout/vue-unicons":"0.0.3","@nuxt/content":"^1.9.0","core-js":"^3.6.5","gsap":"^3.5.1","imports-loader":"^1.2.0","scrollmagic":"^2.0.8","scrollmagic-plugin-gsap":"^1.0.4","scrollmagic-plugins":"^1.0.8","scrollscene":"0.0.24","vue-form":"^4.10.3","vue-scrollmagic":"^1.2.0","@nuxt/core":"^2.14.6"}}
+{
+    "name": "portfolio-josefc",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate"
+    },
+    "dependencies": {
+        "@iconscout/vue-unicons": "0.0.3",
+        "@nuxt/content": "^1.9.0",
+        "core-js": "^3.6.5",
+        "gsap": "^3.5.1",
+        "imports-loader": "^1.2.0",
+        "nuxt": "^2.14.6",
+        "scrollmagic": "^2.0.8",
+        "scrollmagic-plugin-gsap": "^1.0.4",
+        "scrollmagic-plugins": "^1.0.8",
+        "scrollscene": "0.0.24",
+        "vue-form": "^4.10.3",
+        "vue-scrollmagic": "^1.2.0"
+    },
+    "devDependencies": {
+        "@nuxtjs/google-fonts": "^1.2.0",
+        "@nuxtjs/moment": "^1.6.1",
+        "@nuxtjs/style-resources": "^1.0.0",
+        "@nuxtjs/tailwindcss": "^3.1.0",
+        "eslint-config-prettier": "^6.12.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "fibers": "^5.0.0",
+        "prettier": "^2.1.2",
+        "sass": "^1.30.0",
+        "sass-loader": "^10.1.0"
+    }
+}
