@@ -1,5 +1,6 @@
-var path = require('path')
 export default {
+    mode: 'universal',
+    target: 'static',
     head: {
         title: 'portfolio-josefc',
         meta: [
