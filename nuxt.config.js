@@ -27,6 +27,7 @@ export default {
             src: '~plugins/isMobil.js',
             ssr: false,
         },
+
         {
             src: '~plugins/logrocket.js',
             ssr: false,
@@ -35,8 +36,18 @@ export default {
 
     components: true,
 
-    buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxtjs/style-resources', '@nuxtjs/moment'],
+    buildModules: [
+        '@nuxtjs/tailwindcss',
+        '@nuxtjs/google-fonts',
+        '@nuxtjs/style-resources',
+        '@nuxtjs/moment',
+        '@nuxtjs/google-analytics',
+        '@nuxtjs/dotenv',
+    ],
 
+    googleAnalytics: {
+        id: process.env.GOOGLE_ANALYTICS_ID,
+    },
     moment: {
         locales: ['es'],
     },
@@ -54,7 +65,13 @@ export default {
 
     modules: ['@nuxt/content'],
 
-    content: {},
+    content: {
+        markdown: {
+            prism: {
+                theme: 'prism-themes/themes/prism-atom-dark.css',
+            },
+        },
+    },
 
     build: {
         transpile: ['gsap'],

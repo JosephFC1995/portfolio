@@ -1,7 +1,7 @@
 <template>
   <section class="section section-general section-blog">
     <div class="mask-water-title mask-water-title mask-left" ref="mask">
-      <span class="block"> Blogs </span>
+      <span class="block"> Articulos </span>
     </div>
     <div class="content-columns grid grid-cols-1 md:grid-cols-1 mt-10">
       <div class="column-left">

@@ -1,13 +1,13 @@
 <template>
   <section class="section section-general section-quiensoy mb-16">
     <div class="quiensoy-name">
-      <span class="title-grand">
-        Joseph Flores
-        <span class="block outline"> Flores Castillejo </span>
-      </span>
-      <div class="profesional-title">
-        <span> Programador </span>
-        <span> Diseñador </span>
+      <div class="profesional-title flex reveal-box">
+        <span class="reveal-small reveal-style block"> Programador </span>
+        <span class="reveal-small reveal-style block"> Diseñador </span>
+      </div>
+      <div class="reveal-box reveal-title-h1">
+        <span class="title-grand reveal flex" data-delay="1.2"> Hello mundo _. </span>
+        <span class="title-grand block outline reveal flex" data-delay="1.6">- soy Joseph Flores :)</span>
       </div>
     </div>
   </section>

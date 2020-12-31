@@ -35,22 +35,7 @@ export default {
       default: 90,
     },
   },
-  mounted() {
-    // var tl = new TimelineMax({ paused: true })
-    // tl.from(this.$refs.chartline, { scaleX: 0 })
-    // tl.from(this.$refs.chartbox, { yPercent: 100, ease: Linear.easeNone })
-    // const scene2 = this.$scrollmagic
-    //   .scene({
-    //     triggerElement: this.$refs.chartline,
-    //     triggerHook: 0.15,
-    //   })
-    //   .on('enter', function (event) {
-    //     tl.play()
-    //   })
-    //   .addIndicators({ colorTrigger: 'white', colorStart: 'white', colorEnd: 'white', indent: 40 })
-    // this.$scrollmagic.addScene(scene2)
-    // this.$scrollmagic.attachTo(this.$refs.chartbox)
-  },
+  mounted() {},
 }
 </script>
 

@@ -2,10 +2,10 @@
   <div>
     <QuienSoySmall />
     <section class="section section-general section-blog">
-      <div class="mask-water-title mask-water-title mask-left">
-        <span class="block"> Blogs </span>
+      <div class="mask-water-title mask-water-title mask-left reveal-mask">
+        <span class="block"> Ult. Artículos </span>
       </div>
-      <div class="content-columns grid grid-cols-1 md:grid-cols-1 mt-10">
+      <div class="content-columns grid grid-cols-1 md:grid-cols-1 mt-10 reveal-content">
         <div class="column-left">
           <div class="blog mt-10" :class="[hoverArticle != null ? 'selected-now' : '']">
             <article
@@ -44,11 +44,26 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import { gsap, TweenMax, TimelineMax, TweenLite, Power1, Power2, Back, Linear } from 'gsap'
+import mixin from '~/mixins/globalInit'
 
 export default {
+  mixins: [mixin],
+  async asyncData({ store, $content }) {
+    let blogs = await $content('blog')
+      .only(['title', 'description', 'img', 'slug', 'author', 'author', 'categories', 'createdAt'])
+      .sortBy('createdAt', 'desc')
+      .limit(5)
+      .fetch()
+    await store.dispatch('content/GET_ARTICLES', blogs)
+  },
   data() {
     return {
       hoverArticle: null,
+    }
+  },
+  head() {
+    return {
+      title: 'Últimos articulos - Joseph Flores Castillejo :)',
     }
   },
   methods: {
@@ -62,33 +77,7 @@ export default {
     }),
   },
   async mounted() {
-    var html = document.documentElement
-    var body = document.body
-    var _self = this
-    var target = document.querySelector('#scroll-container')
-    console.log('colocando el tamaño al body de las entradas')
-    var height = target.clientHeight
-    body.style.height = height + 'px'
-
-    //
-    const allTitleSection = document.querySelectorAll('.mask-water-title')
-
-    const ctrl = new this.$scrollmagic.Controller()
-
-    allTitleSection.forEach((t, index) => {
-      var target = t
-      var child = target.childNodes
-      var tl = new TimelineMax()
-      tl.to(child, 1, { y: -100, ease: Linear.easeNone })
-
-      var scene = new this.$scrollmagic.Scene({
-        triggerElement: target,
-        triggerHook: 0.4,
-        duration: '100%',
-      })
-        .setTween(tl)
-        .addTo(ctrl)
-    })
+    this.initPage()
   },
 }
 </script>

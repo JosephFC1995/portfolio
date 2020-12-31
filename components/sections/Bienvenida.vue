@@ -1,5 +1,5 @@
 <template>
-  <section class="section section-general section-bienvenida">
+  <section class="section section-general section-bienvenida" id="inicio">
     <div class="quiensoy-name">
       <!-- <div class="flex mt-8">
         <a class="btn-light cursor-link" href="#contact">Contactárme</a>

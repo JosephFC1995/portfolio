@@ -1,5 +1,5 @@
 <template>
-  <section class="section section-general section-quiensoy mb-5 md:mb-16">
+  <section class="section section-general section-quiensoy mb-5 md:mb-16" id="quiensoy">
     <div class="mask-water-title mask-water-title mask-right reveal-mask">
       <span class="block"> Quien soy </span>
     </div>

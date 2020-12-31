@@ -47,60 +47,27 @@ export default {
     }
   },
   methods: {
-    updateScrollerGsap() {
-      var html = document.documentElement
-      var body = document.body
-      var _self = this
-      var resized = this.scrollContent.resizeRequest > 0
-      var target = this.$refs.scrollContainer
+    onLoadGsapSmothScroll() {
+      var container = document.querySelector('#scroll-container')
+      var height
 
-      if (resized) {
-        var height = target.clientHeight
-        body.style.height = height + 'px'
-        this.scrollContent.resizeRequest = 0
+      function setHeight() {
+        height = container.clientHeight
+        document.body.style.height = height + 'px'
       }
+      ScrollTrigger.addEventListener('refreshInit', setHeight)
 
-      var scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0
-      this.scrollContent.endY = scrollY
-      this.scrollContent.y += (scrollY - this.scrollContent.y) * this.scrollContent.ease
-
-      if (Math.abs(scrollY - this.scrollContent.y) < 0.05 || resized) {
-        this.scrollContent.y = scrollY
-        this.scrollContent.scrollRequest = 0
-      }
-
-      TweenLite.set(document.querySelector('#scroll-container'), {
-        y: -_self.scrollContent.y,
+      this.$gsap.to(container, {
+        y: () => -(height - document.documentElement.clientHeight),
+        ease: 'none',
+        scrollTrigger: {
+          trigger: document.body,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 1,
+          invalidateOnRefresh: true,
+        },
       })
-
-      this.requestId = this.scrollContent.scrollRequest > 0 ? window.requestAnimationFrame(_self.updateScrollerGsap) : null
-    },
-    onScrollGasp() {
-      var _self = this
-      this.scrollContent.scrollRequest++
-      if (!this.requestId) {
-        this.requestId = window.requestAnimationFrame(_self.updateScrollerGsap)
-      }
-    },
-    onResizeGsap() {
-      let _self = this
-      this.scrollContent.resizeRequest++
-      if (!this.requestId) {
-        this.requestId = window.requestAnimationFrame(_self.updateScrollerGsap)
-      }
-    },
-    onMouseGsap() {
-      let _self = this
-      this.scrollContent.resizeRequest++
-      if (!this.requestId) {
-        this.requestId = window.requestAnimationFrame(_self.updateScrollerGsap)
-      }
-    },
-    onLoadGsap() {
-      this.updateScrollerGsap()
-      window.focus()
-      window.addEventListener('resize', this.onResizeGsap)
-      document.addEventListener('scroll', this.onScrollGasp)
     },
     updateHeightBody() {
       var target = this.$refs.scrollContainer
@@ -185,14 +152,7 @@ export default {
       e.preventDefault()
     })
 
-    TweenLite.set(this.$refs.scrollContainer, {
-      rotation: 0.01,
-      force3D: true,
-    })
-
-    var body = document.body
-
-    window.addEventListener('load', _self.onLoadGsap())
+    window.addEventListener('load', _self.onLoadGsapSmothScroll())
 
     // grilla
 
@@ -208,8 +168,6 @@ export default {
   watch: {
     $route(to, from) {
       console.log(this.$ismovil.any())
-      this.scrollContent.resizeRequest = 1
-      this.requestId = null
     },
   },
 }
