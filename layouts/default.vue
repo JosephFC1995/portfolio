@@ -177,7 +177,7 @@ export default {
 body {
   background: #0f1010;
   color: #fff;
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   &::-webkit-scrollbar {
     display: none;
   }

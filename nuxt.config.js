@@ -1,13 +1,17 @@
+import getSiteMeta from './utils/getSiteMeta'
+import getRoutes from './utils/getRoutes'
+
+const meta = getSiteMeta()
+
 export default {
     mode: 'universal',
     target: 'static',
     head: {
+        htmlAttrs: {
+            lang: 'es',
+        },
         title: 'portfolio-josefc',
-        meta: [
-            { charset: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: '' },
-        ],
+        meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, ...meta],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
 
@@ -50,6 +54,13 @@ export default {
     },
     moment: {
         locales: ['es'],
+    },
+
+    sitemap: {
+        hostname: process.env.BASE_URL,
+        routes() {
+            return getRoutes()
+        },
     },
 
     styleResources: {
