@@ -77,7 +77,7 @@ section {
         font-size: 56px;
         line-height: 84px;
     }
-    span {
+    &+span {
         line-height: 108px;
         &.outline {
             box-sizing: border-box;
@@ -249,5 +249,20 @@ section {
         .blog-list {
             opacity: 0.3;
         }
+    }
+}
+
+.reveal {
+    position: relative;
+    visibility: hidden;
+    overflow: hidden;
+    display: block;
+    &-style {
+        visibility: hidden;
+        overflow: hidden;
+    }
+    &-box {
+        // overflow: hidden;
+        // position: relative;
     }
 }

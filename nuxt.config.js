@@ -1,4 +1,5 @@
 export default {
+    mode: 'universal',
     target: 'static',
     head: {
         title: 'portfolio-josefc',
@@ -24,6 +25,10 @@ export default {
         },
         {
             src: '~plugins/isMobil.js',
+            ssr: false,
+        },
+        {
+            src: '~plugins/logrocket.js',
             ssr: false,
         },
     ],

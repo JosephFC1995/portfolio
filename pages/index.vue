@@ -4,13 +4,15 @@
     <QuienSoy />
     <Habilidades />
     <Trabajo />
-    <Blog />
     <Contactame />
   </div>
 </template>
 
 <script>
-import { gsap, TweenMax, TimelineMax, TweenLite, Power1, Power2, Back, Linear } from 'gsap'
+import { gsap, TweenMax, TimelineMax, TweenLite, Power1, Power2, Back, Linear, Expo } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   async asyncData({ store, $content }) {
@@ -52,6 +54,88 @@ export default {
       })
         .setTween(tl)
         .addTo(ctrl)
+    })
+
+    //
+
+    // let revealContainers = document.querySelectorAll('.reveal')
+
+    ScrollTrigger.batch('.reveal', {
+      onEnter: (batch) => {
+        gsap.from(batch, {
+          autoAlpha: 0,
+          yPercent: 100,
+          overwrite: true,
+          ease: Expo.easeInOut,
+          delay: 1.8,
+          duration: 1.3,
+        })
+      },
+    })
+
+    ScrollTrigger.batch('.reveal-small', {
+      onEnter: (batch) => {
+        gsap.from(batch, {
+          autoAlpha: 0,
+          yPercent: -100,
+          overwrite: true,
+          ease: Expo.easeInOut,
+          delay: 2.8,
+          duration: 1.1,
+          stagger: { each: 0.15, grid: [1, 2] },
+        })
+      },
+    })
+
+    ScrollTrigger.batch('.reveal-mask', {
+      onEnter: (batch) => {
+        gsap.from(batch, {
+          autoAlpha: 0,
+          overwrite: true,
+          ease: Expo.easeInOut,
+          delay: 0.8,
+          duration: 1,
+        })
+      },
+    })
+
+    ScrollTrigger.batch('.reveal-content', {
+      onEnter: (batch) => {
+        gsap.from(batch, {
+          autoAlpha: 0,
+          overwrite: true,
+          ease: Expo.easeInOut,
+          delay: 1.7,
+          duration: 1,
+        })
+      },
+    })
+
+    ScrollTrigger.batch('.reveal-h3', {
+      onEnter: (batch) => {
+        gsap.from(batch, {
+          autoAlpha: 0,
+          yPercent: 100,
+          overwrite: true,
+          ease: Expo.easeInOut,
+          delay: 1.2,
+          duration: 1.3,
+        })
+      },
+    })
+
+    ScrollTrigger.batch('.reveal-skills', {
+      onEnter: (batch) => {
+        gsap.from(batch, {
+          autoAlpha: 0,
+          yPercent: 30,
+          overwrite: true,
+          ease: Expo.easeInOut,
+          delay: 1.3,
+          duration: 1,
+          stagger: { each: 0.1, grid: [1, 4] },
+        })
+      },
     })
   },
 }

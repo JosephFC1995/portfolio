@@ -1,16 +1,19 @@
 <template>
   <section class="section section-general section-quiensoy mb-5 md:mb-16">
-    <div class="mask-water-title mask-water-title mask-right">
+    <div class="mask-water-title mask-water-title mask-right reveal-mask">
       <span class="block"> Quien soy </span>
     </div>
-    <div class="text-who mt-10 text-simple">
-      Soy un desarrollador web con 3 años de experiencia en el mercado con sede en Perú. Soy un
-      <u class="cursor-zoom">apasiado</u> para lo que hago, desde pequeños hasta grandes proyectos. Soy un soñador y fanático del
-      concepto minimalista. Tengo el superpoder de ser autodidacta, y los retos son mis mejores apuestas para representar mis
-      habilidades. Me encantan los gatos y descubrir nueva música. Cada día es un momento para aprender nuevas cosas.
-    </div>
-    <div class="button-group flex justify-end mt-3">
-      <a href="#" class="btn-simple animation cursor-link"> Descargar CV </a>
+    <div class="text-who mt-10 text-simple reveal-box block reveal-content">
+      <span>
+        Soy un desarrollador web con 3 años de experiencia en el mercado con sede en Perú. Soy un
+        <u class="cursor-zoom">apasiado</u> para lo que hago, desde pequeños hasta grandes proyectos. Soy un soñador y fanático
+        del concepto minimalista. Tengo el superpoder de ser autodidacta, y los retos son mis mejores apuestas para representar
+        mis habilidades. Me encantan los gatos y descubrir nueva música. Cada día es un momento para aprender nuevas cosas.
+      </span>
+
+      <div class="button-group flex justify-start mt-10">
+        <a href="#" class="btn-light animation cursor-link"> Descargar CV </a>
+      </div>
     </div>
   </section>
 </template>

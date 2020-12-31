@@ -1,9 +1,9 @@
 <template>
   <section class="section section-general section-trabajo">
-    <div class="mask-water-title mask-water-title mask-right">
+    <div class="mask-water-title mask-water-title mask-right reveal-mask">
       <span class="block"> Trabajo </span>
     </div>
-    <div class="content-columns grid grid-cols-1 md:grid-cols-2 mt-4 gap-4">
+    <div class="content-columns grid grid-cols-1 md:grid-cols-2 mt-4 gap-4 reveal-content">
       <div class="column-left">
         <div class="text-top">¿Por qué elegirme?</div>
         <div class="text-bottom">

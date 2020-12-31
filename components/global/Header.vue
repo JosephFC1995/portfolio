@@ -3,9 +3,9 @@
     <div class="header-left">
       <nuxt-link to="/" class="logo-portfolio cursor-link"> Josephfc </nuxt-link>
     </div>
-    <nav class="menu-primary-container">
+    <!-- <nav class="menu-primary-container">
       <div class="nav-height">
-        <!-- <div class="menu-inner">
+        <div class="menu-inner">
           <ul id="menu" class="flex nav-ul hidden">
             <li class="menu-item menu item-page nav-li">
               <a href="#">
@@ -38,9 +38,9 @@
               </a>
             </li>
           </ul>
-        </div> -->
+        </div>
       </div>
-    </nav>
+    </nav> -->
   </header>
 </template>
 

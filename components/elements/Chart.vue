@@ -1,5 +1,5 @@
 <template>
-  <div class="chart chart-frontend">
+  <div class="chart chart-column reveal-skills">
     <div class="chart-line" ref="chartline">
       <div
         class="chart-box cursor-hidden"
@@ -56,7 +56,7 @@ export default {
 
 <style lang="scss">
 .chart {
-  &-frontend {
+  &-column {
     flex: 0 0 25%;
     width: 25%;
     text-align: center;
@@ -70,7 +70,7 @@ export default {
     }
   }
   &-line {
-    overflow: hidden;
+    // overflow: hidden;
   }
   &-box {
     width: 150px;

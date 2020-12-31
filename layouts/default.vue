@@ -1,5 +1,7 @@
 <template>
   <div class="viewport">
+    <MenuNavigation />
+    <LoadingScreen />
     <div class="grillas">
       <div class="container mx-auto">
         <div class="grid grid-cols-4">
@@ -32,6 +34,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default {
   data() {
     return {
+      porcentaje: 0,
       requestId: null,
       scrollContent: {
         target: null,
@@ -109,9 +112,38 @@ export default {
       body.style.height = height + 'px'
       this.scrollContent.resizeRequest = 0
     },
+    hiddenLoadingScreen() {
+      let elementLoadingScreen = document.querySelector('.loading-screen')
+      let elementLSLeft = elementLoadingScreen.querySelector('.loading-left')
+      let elementLSRight = elementLoadingScreen.querySelector('.loading-rigth')
+      let elementLSFirstHidden = elementLoadingScreen.querySelectorAll('.loading-first-hidden')
+
+      var eL = this.$gsap.timeline()
+      eL.to(elementLSFirstHidden, {
+        autoAlpha: 0,
+        visibility: 'hidden',
+        delay: 0.5,
+        duration: 0.7,
+      })
+        .to(elementLSLeft, {
+          yPercent: -100,
+        })
+        .to(elementLSRight, {
+          yPercent: 100,
+        })
+        .to(elementLoadingScreen, {
+          autoAlpha: 0,
+          visibility: 'hidden',
+        })
+      eL.play()
+    },
+  },
+  created() {
+    // console.log('DEFAULT CREADOR')
   },
   mounted() {
     let _self = this
+    this.hiddenLoadingScreen()
 
     gsap.set('#follower .cursor', { transformOrigin: 'center', scale: 1 })
 
