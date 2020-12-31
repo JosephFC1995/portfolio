@@ -26,7 +26,7 @@ const meta = getSiteMeta()
 export default {
   mixins: [mixin],
   async asyncData({ $content, params }) {
-    const article = await $content('blog', params.slug).fetch()
+    const article = await $content('articles', params.slug).fetch()
 
     return { article }
   },
@@ -45,14 +45,14 @@ export default {
         },
         {
           property: 'article:tag',
-          content: this.article.tags ? this.article.tags.toString() : '',
+          content: this.article.categories ? this.article.categories.toString() : '',
         },
         { name: 'twitter:label1', content: 'Escrito por' },
         { name: 'twitter:data1', content: 'Joseph Flores Castillejo' },
         { name: 'twitter:label2', content: 'Archivado bajo' },
         {
           name: 'twitter:data2',
-          content: this.article.tags ? this.article.tags.toString() : '',
+          content: this.article.categories ? this.article.categories.toString() : '',
         },
       ],
       link: [

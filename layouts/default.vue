@@ -55,6 +55,7 @@ export default {
         height = container.clientHeight
         document.body.style.height = height + 'px'
       }
+      ScrollTrigger.addEventListener('scrollStart', setHeight)
       ScrollTrigger.addEventListener('refreshInit', setHeight)
 
       this.$gsap.to(container, {

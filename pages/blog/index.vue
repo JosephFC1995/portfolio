@@ -49,7 +49,7 @@ import mixin from '~/mixins/globalInit'
 export default {
   mixins: [mixin],
   async asyncData({ store, $content }) {
-    let blogs = await $content('blog')
+    let blogs = await $content('articles')
       .only(['title', 'description', 'img', 'slug', 'author', 'author', 'categories', 'createdAt'])
       .sortBy('createdAt', 'desc')
       .limit(5)
