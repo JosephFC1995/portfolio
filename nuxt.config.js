@@ -74,7 +74,7 @@ export default {
         display: 'swap',
     },
 
-    modules: ['@nuxt/content'],
+    modules: ['@nuxt/content', '@nuxtjs/sitemap'],
 
     content: {
         markdown: {
