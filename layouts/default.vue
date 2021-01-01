@@ -14,13 +14,15 @@
       </div>
     </div>
     <div id="scroll-container" class="scroll-container" ref="scrollContainer">
-      <smooth-scrollbar :options="{ renderByPixels: true, damping: 0.05 }" id="content-scroll-container">
-        <Header />
-        <div class="container mx-auto">
-          <Nuxt />
-        </div>
-        <Footer />
-      </smooth-scrollbar>
+      <client-only>
+        <smooth-scrollbar :options="{ renderByPixels: true, damping: 0.05 }" id="content-scroll-container">
+          <Header />
+          <div class="container mx-auto">
+            <Nuxt />
+          </div>
+          <Footer />
+        </smooth-scrollbar>
+      </client-only>
     </div>
     <div id="follower">
       <div class="cursor"></div>
