@@ -31,7 +31,11 @@ export default {
     }
   },
   mounted() {
-    this.initPage()
+    console.log('MONTADO PAGINA INDEX')
+
+    setTimeout(() => {
+      this.initPage()
+    }, 1000)
   },
 }
 </script>

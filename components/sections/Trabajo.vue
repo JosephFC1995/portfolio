@@ -1,5 +1,5 @@
 <template>
-  <section class="section section-general section-trabajo">
+  <section class="section section-general section-trabajo" id="trabajo">
     <div class="mask-water-title mask-water-title mask-right reveal-mask">
       <span class="block"> Trabajo </span>
     </div>

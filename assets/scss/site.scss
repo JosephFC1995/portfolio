@@ -264,7 +264,12 @@ section {
     &-box {
         // overflow: hidden;
         // position: relative;
+        opacity: 1!important;
     }
+}
+
+[class*="reveal"] {
+    opacity: 0;
 }
 
 .nuxt-content {

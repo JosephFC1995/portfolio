@@ -2,6 +2,7 @@
   <div class="viewport">
     <MenuNavigation />
     <LoadingScreen />
+    <ChangeRouter />
     <div class="grillas">
       <div class="container mx-auto">
         <div class="grid grid-cols-4">
@@ -13,11 +14,13 @@
       </div>
     </div>
     <div id="scroll-container" class="scroll-container" ref="scrollContainer">
-      <Header />
-      <div class="container mx-auto">
-        <Nuxt />
-      </div>
-      <Footer />
+      <smooth-scrollbar :options="{ renderByPixels: true, damping: 0.05 }" id="content-scroll-container">
+        <Header />
+        <div class="container mx-auto">
+          <Nuxt />
+        </div>
+        <Footer />
+      </smooth-scrollbar>
     </div>
     <div id="follower">
       <div class="cursor"></div>
@@ -28,7 +31,6 @@
 <script>
 import { gsap, TweenMax, TimelineMax, TweenLite, Power1, Power2, Back, Linear } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 gsap.registerPlugin(ScrollTrigger)
 
 export default {
@@ -50,14 +52,12 @@ export default {
     onLoadGsapSmothScroll() {
       var container = document.querySelector('#scroll-container')
       var height
-
       function setHeight() {
         height = container.clientHeight
         document.body.style.height = height + 'px'
       }
       ScrollTrigger.addEventListener('scrollStart', setHeight)
       ScrollTrigger.addEventListener('refreshInit', setHeight)
-
       this.$gsap.to(container, {
         y: () => -(height - document.documentElement.clientHeight),
         ease: 'none',
@@ -75,7 +75,6 @@ export default {
       var html = document.documentElement
       var body = document.body
       var _self = this
-
       var height = target.clientHeight
       body.style.height = height + 'px'
       this.scrollContent.resizeRequest = 0
@@ -85,13 +84,13 @@ export default {
       let elementLSLeft = elementLoadingScreen.querySelector('.loading-left')
       let elementLSRight = elementLoadingScreen.querySelector('.loading-rigth')
       let elementLSFirstHidden = elementLoadingScreen.querySelectorAll('.loading-first-hidden')
-
-      var eL = this.$gsap.timeline()
+      var eL = this.$gsap.timeline({
+        paused: true,
+        duration: 1,
+      })
       eL.to(elementLSFirstHidden, {
         autoAlpha: 0,
         visibility: 'hidden',
-        delay: 0.5,
-        duration: 0.7,
       })
         .to(elementLSLeft, {
           yPercent: -100,
@@ -112,9 +111,7 @@ export default {
   mounted() {
     let _self = this
     this.hiddenLoadingScreen()
-
     gsap.set('#follower .cursor', { transformOrigin: 'center', scale: 1 })
-
     window.addEventListener('mousemove', (e) => {
       gsap.to('#follower', 0.6, {
         x: e.clientX,
@@ -122,7 +119,6 @@ export default {
         ease: 'out',
       })
     })
-
     document.body.addEventListener('mouseover', (e) => {
       var t = e.target
       if (t.classList.contains('cursor-link')) {
@@ -149,19 +145,15 @@ export default {
           background: 'white',
         })
       }
-
       e.preventDefault()
     })
-
-    window.addEventListener('load', _self.onLoadGsapSmothScroll())
-
+    // window.addEventListener('load', _self.onLoadGsapSmothScroll())
     // grilla
-
     let grillas = document.querySelectorAll('.grid-line')
-
     grillas.forEach((grilla, index) => {
       grilla.classList.add('up')
     })
+    console.log('MONTADO PAGINA DEFAULT')
 
     //TweenLite.set('.mask-water-title.mask-right .block', { xPercent: 0, right: '0', position: 'absolute' })
     //TweenLite.set('.mask-water-title.mask-left .block', { xPercent: 0, left: '0', position: 'absolute' })
@@ -183,6 +175,7 @@ body {
     display: none;
   }
 }
+
 #follower {
   position: fixed;
   pointer-events: none;
@@ -211,23 +204,25 @@ body {
     margin-top: -1rem;
   }
 }
-
-.viewport {
-  overflow: hidden;
+// .viewport {
+//   overflow: hidden;
+//   position: fixed;
+//   height: 100%;
+//   width: 100%;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+// }
+.scroll-container {
   position: fixed;
-  height: 100%;
-  width: 100%;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
 }
-
-.scroll-container {
-  position: absolute;
-  overflow: hidden;
-  z-index: 10;
-  transform-style: preserve-3d;
-  width: 100%;
+.scrollbar-track {
+  background: transparent !important;
+  display: none !important;
 }
 </style>

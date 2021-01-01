@@ -3,49 +3,78 @@
     <div class="header-left">
       <nuxt-link to="/" class="logo-portfolio cursor-link"> Josephfc </nuxt-link>
     </div>
-    <!-- <nav class="menu-primary-container">
+    <nav class="menu-primary-container">
       <div class="nav-height">
         <div class="menu-inner">
-          <ul id="menu" class="flex nav-ul hidden">
-            <li class="menu-item menu item-page nav-li">
-              <a href="#">
-                <span class="cursor-link"> Inicio </span>
-              </a>
+          <ul id="menu" class="flex nav-ul">
+            <li class="menu-item menu item-page nav-li cursor-link">
+              <a href="#"> Inicio </a>
             </li>
-            <li class="menu-item menu item-page nav-li">
-              <a href="#">
-                <span class="cursor-link"> Quien soy </span>
-              </a>
+            <li class="menu-item menu item-page nav-li cursor-link">
+              <nuxt-link
+                :to="{ path: '/', hash: '#quiensoy' }"
+                class="navigation-link"
+                data-hash="#quiensoy"
+                @click.native="goToSection($event)"
+              >
+                Quien soy
+              </nuxt-link>
             </li>
-            <li class="menu-item menu item-page nav-li">
-              <a href="#">
-                <span class="cursor-link"> Habilidades </span>
-              </a>
+            <li class="menu-item menu item-page nav-li cursor-link">
+              <nuxt-link
+                :to="{ path: '/', hash: '#habilidades' }"
+                class="navigation-link"
+                data-hash="#habilidades"
+                @click.native="goToSection($event)"
+              >
+                Habilidades
+              </nuxt-link>
             </li>
-            <li class="menu-item menu item-page nav-li">
-              <a href="#">
-                <span class="cursor-link"> Trabajos </span>
-              </a>
+            <li class="menu-item menu item-page nav-li cursor-link">
+              <nuxt-link
+                :to="{ path: '/', hash: '#trabajo' }"
+                class="navigation-link"
+                data-hash="#trabajo"
+                @click.native="goToSection($event)"
+              >
+                Trabajos
+              </nuxt-link>
             </li>
-            <li class="menu-item menu item-page nav-li">
-              <a href="#">
-                <span class="cursor-link"> Blog </span>
-              </a>
+            <li class="menu-item menu item-page nav-li cursor-link">
+              <nuxt-link
+                :to="{ path: '/', hash: '#contactame' }"
+                class="navigation-link"
+                data-hash="#contactame"
+                @click.native="goToSection($event)"
+              >
+                Contactáme
+              </nuxt-link>
             </li>
-            <li class="menu-item menu item-page nav-li">
-              <a href="#">
-                <span class="cursor-link"> Contactáme </span>
-              </a>
+            <li class="menu-item menu item-page nav-li cursor-link">
+              <nuxt-link :to="{ path: 'blog' }" class="navigation-link"> Blog </nuxt-link>
             </li>
           </ul>
         </div>
       </div>
-    </nav> -->
+    </nav>
   </header>
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    goToSection(e) {
+      const target = e.target
+      const archor = target.getAttribute('href')
+      console.log(archor, 'archor')
+      const targetEl = document.querySelector(archor.replace('/', ''))
+      if (targetEl) {
+        const targetRect = targetEl.getBoundingClientRect()
+      }
+      // console.log(targetEl, targetRect)
+    },
+  },
+}
 </script>
 
 <style lang="scss">

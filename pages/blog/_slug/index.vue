@@ -76,8 +76,11 @@ export default {
       return getSiteMeta(metaData)
     },
   },
+  created() {},
   async mounted() {
-    this.initPage()
+    setTimeout(() => {
+      this.initPage()
+    }, 1000)
   },
 }
 </script>

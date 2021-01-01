@@ -1,5 +1,5 @@
 <template>
-  <section class="section section-general section-contactame pb-10" id="contact">
+  <section class="section section-general section-contactame pb-10" id="contactame">
     <div class="mask-water-title mask-water-title mask-left reveal-mask">
       <span class="block"> Contáctame </span>
     </div>

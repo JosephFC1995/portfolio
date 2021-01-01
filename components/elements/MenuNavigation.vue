@@ -1,6 +1,6 @@
 <template>
-  <div class="section-navigation">
-    <div class="button-navigation open" @click="openMenu">
+  <div class="section-navigation" id="section-navigation">
+    <div class="button-navigation open flex md:hidden" @click="openMenu">
       <div class="button-navigation-content">
         <UilBars size="25px" />
       </div>
@@ -16,22 +16,42 @@
       <div class="content-navigation-nav">
         <ul class="navigation-list">
           <li class="navigation-li">
-            <nuxt-link :to="{ path: '/', hash: '#quiensoy' }" class="navigation-link" @click.native="goToSection($event)">
+            <nuxt-link
+              :to="{ path: '/', hash: '#quiensoy' }"
+              class="navigation-link"
+              @click.native="goToSection($event)"
+              data-hash="#quiensoy"
+            >
               Quien soy
             </nuxt-link>
           </li>
           <li class="navigation-li">
-            <nuxt-link :to="{ path: '/', hash: '#habilidades' }" class="navigation-link" @click.native="goToSection($event)">
+            <nuxt-link
+              :to="{ path: '/', hash: '#habilidades' }"
+              class="navigation-link"
+              @click.native="goToSection($event)"
+              data-hash="#habilidades"
+            >
               Habilidades
             </nuxt-link>
           </li>
           <li class="navigation-li">
-            <nuxt-link :to="{ path: '/', hash: '#trabajo' }" class="navigation-link" @click.native="goToSection($event)">
+            <nuxt-link
+              :to="{ path: '/', hash: '#trabajo' }"
+              class="navigation-link"
+              @click.native="goToSection($event)"
+              data-hash="#trabajo"
+            >
               Trabajo
             </nuxt-link>
           </li>
           <li class="navigation-li">
-            <nuxt-link :to="{ path: '/', hash: '#contactame' }" class="navigation-link" @click.native="goToSection($event)">
+            <nuxt-link
+              :to="{ path: '/', hash: '#contactame' }"
+              class="navigation-link"
+              @click.native="goToSection($event)"
+              data-hash="#contactame"
+            >
               Contáctame
             </nuxt-link>
           </li>
@@ -52,7 +72,6 @@ import { gsap, TweenMax, TimelineMax, TweenLite, Power1, Power2, Back, Linear, E
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/all'
 gsap.registerPlugin(ScrollToPlugin)
-
 gsap.registerPlugin(ScrollTrigger)
 
 export default {
@@ -140,7 +159,7 @@ export default {
     border-radius: 50%;
     cursor: pointer;
     color: #0f1010;
-    display: flex;
+    // display: flex;
     align-items: center;
     justify-content: center;
     z-index: 88;

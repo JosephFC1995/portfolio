@@ -54,9 +54,6 @@ export default {
       width: 50%;
     }
   }
-  &-line {
-    // overflow: hidden;
-  }
   &-box {
     width: 150px;
     height: 150px;

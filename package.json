@@ -24,8 +24,10 @@
         "scrollmagic-plugin-gsap": "^1.0.4",
         "scrollmagic-plugins": "^1.0.8",
         "scrollscene": "0.0.24",
+        "smooth-scrollbar": "^8.5.3",
         "vue-form": "^4.10.3",
-        "vue-scrollmagic": "^1.2.0"
+        "vue-scrollmagic": "^1.2.0",
+        "vue-smooth-scrollbar": "^0.1.2"
     },
     "devDependencies": {
         "@nuxtjs/google-fonts": "^1.2.0",

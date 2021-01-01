@@ -1,5 +1,5 @@
 <template>
-  <section class="section section-general section-hablidades">
+  <section class="section section-general section-hablidades" id="habilidades">
     <div class="mask-water-title mask-water-title mask-left reveal-mask">
       <span class="block"> Habilidades </span>
     </div>

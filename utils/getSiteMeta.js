@@ -2,7 +2,7 @@ const type = 'website'
 const url = 'https://josephfc.dev/'
 const title = 'Joseph Flores Castillejo'
 const description = 'Mi portafolio.'
-const mainImage = '/joseph.png'
+const mainImage = '/img/joseph.png'
 
 export default (meta) => {
     return [{

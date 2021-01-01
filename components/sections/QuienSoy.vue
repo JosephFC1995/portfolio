@@ -3,7 +3,7 @@
     <div class="mask-water-title mask-water-title mask-right reveal-mask">
       <span class="block"> Quien soy </span>
     </div>
-    <div class="text-who mt-10 text-simple reveal-box block reveal-content">
+    <div class="text-who mt-10 text-simple block reveal-content">
       <span>
         Soy un desarrollador web con 3 años de experiencia en el mercado con sede en Perú. Soy un
         <u class="cursor-zoom">apasiado</u> para lo que hago, desde pequeños hasta grandes proyectos. Soy un soñador y fanático

@@ -31,9 +31,12 @@ export default {
             src: '~plugins/isMobil.js',
             ssr: false,
         },
-
         {
             src: '~plugins/logrocket.js',
+            ssr: false,
+        },
+        {
+            src: '~plugins/vue-smooth-scrollbar.js',
             ssr: false,
         },
     ],
