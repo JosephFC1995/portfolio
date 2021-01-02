@@ -155,7 +155,6 @@ export default {
     grillas.forEach((grilla, index) => {
       grilla.classList.add('up')
     })
-    console.log('MONTADO PAGINA DEFAULT')
 
     //TweenLite.set('.mask-water-title.mask-right .block', { xPercent: 0, right: '0', position: 'absolute' })
     //TweenLite.set('.mask-water-title.mask-left .block', { xPercent: 0, left: '0', position: 'absolute' })

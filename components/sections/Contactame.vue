@@ -1,6 +1,6 @@
 <template>
   <section class="section section-general section-contactame pb-10" id="contactame">
-    <div class="mask-water-title mask-water-title mask-left reveal-mask">
+    <div class="mask-water-title mask-water-title mask-right reveal-mask">
       <span class="block"> Contáctame </span>
     </div>
     <div class="content-columns grid grid-cols-1 md:grid-cols-2 mt-10 gap-4 reveal-content">

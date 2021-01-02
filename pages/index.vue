@@ -4,6 +4,7 @@
     <QuienSoy />
     <Habilidades />
     <Trabajo />
+    <Portafolio />
     <Contactame />
   </div>
 </template>
@@ -17,22 +18,13 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default {
   mixins: [mixin],
-  async asyncData({ store, $content }) {
-    let blogs = await $content('blog')
-      .only(['title', 'description', 'img', 'slug', 'author', 'author', 'categories', 'createdAt'])
-      .sortBy('createdAt', 'desc')
-      .limit(5)
-      .fetch()
-    await store.dispatch('content/GET_ARTICLES', blogs)
-  },
+  async asyncData({ store, $content }) {},
   head() {
     return {
       title: 'Joseph Flores Castillejo :)',
     }
   },
   mounted() {
-    console.log('MONTADO PAGINA INDEX')
-
     setTimeout(() => {
       this.initPage()
     }, 1000)

@@ -2,7 +2,7 @@
   <section class="section section-general section-quiensoy mb-5">
     <div class="quiensoy-name">
       <div class="profesional-title flex reveal-box">
-        <span class="reveal-small reveal-style block" v-for="(cat, index) in returnCategories(categories)" :key="index">
+        <span class="reveal-small reveal-style block" v-for="(cat, index) in tags" :key="index">
           {{ cat }}
         </span>
       </div>
@@ -25,9 +25,9 @@ export default {
       type: String,
       default: '',
     },
-    categories: {
-      type: String,
-      default: '',
+    tags: {
+      type: Array,
+      default: [],
     },
     fecha: {
       type: String,
@@ -36,6 +36,7 @@ export default {
   },
   methods: {
     returnCategories(categories) {
+      if (!categories) return ''
       return categories.split(', ')
     },
   },

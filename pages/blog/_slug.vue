@@ -1,12 +1,13 @@
 <template>
   <div>
-    <ArticuloSingle
-      :title="article.title"
-      :categories="article.categories"
-      :fecha="$moment(article.createdAt).format('MMMM DD YYYY')"
-    />
+    <ArticuloSingle :title="article.title" :tags="article.tags" :fecha="$moment(article.published).format('MMMM DD YYYY')" />
     <section class="section section-general section-blog-single">
-      <img :src="article.img" :alt="article.title" v-if="article.img" class="section-blog-image mx-auto reveal-content-blog" />
+      <img
+        :src="article.image"
+        :alt="article.title"
+        v-if="article.image"
+        class="section-blog-image mx-auto reveal-content-blog"
+      />
       <div class="content-single grid grid-cols-1 md:grid-cols-1 mt-2 reveal-content-blog">
         <article>
           <nuxt-content :document="article" />
@@ -32,12 +33,12 @@ export default {
   },
   head() {
     return {
-      title: this.article.title,
+      title: this.article.title + ' - Joseph Flores Castillejo :)',
       meta: [
         ...this.meta,
         {
           property: 'article:published_time',
-          content: this.article.createdAt,
+          content: this.article.published,
         },
         {
           property: 'article:modified_time',

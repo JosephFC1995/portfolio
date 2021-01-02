@@ -8,7 +8,7 @@
         <div class="menu-inner">
           <ul id="menu" class="flex nav-ul">
             <li class="menu-item menu item-page nav-li cursor-link">
-              <a href="#"> Inicio </a>
+              <nuxt-link :to="{ path: '/' }" class="navigation-link">Inicio </nuxt-link>
             </li>
             <li class="menu-item menu item-page nav-li cursor-link">
               <nuxt-link
@@ -42,6 +42,16 @@
             </li>
             <li class="menu-item menu item-page nav-li cursor-link">
               <nuxt-link
+                :to="{ path: '/', hash: '#portafolio' }"
+                class="navigation-link"
+                data-hash="#portafolio"
+                @click.native="goToSection($event)"
+              >
+                Portafolio
+              </nuxt-link>
+            </li>
+            <li class="menu-item menu item-page nav-li cursor-link">
+              <nuxt-link
                 :to="{ path: '/', hash: '#contactame' }"
                 class="navigation-link"
                 data-hash="#contactame"
@@ -51,7 +61,7 @@
               </nuxt-link>
             </li>
             <li class="menu-item menu item-page nav-li cursor-link">
-              <nuxt-link :to="{ path: 'blog' }" class="navigation-link"> Blog </nuxt-link>
+              <nuxt-link :to="{ name: 'blog' }" class="navigation-link"> Blog </nuxt-link>
             </li>
           </ul>
         </div>

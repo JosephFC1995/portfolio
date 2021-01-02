@@ -12,7 +12,7 @@
       </span>
 
       <div class="button-group flex justify-start mt-10">
-        <a href="#" class="btn-light animation cursor-link"> Descargar CV </a>
+        <a href="/files/curriculo_vitae.pdf" target="_blank" class="btn-light animation cursor-link"> Descargar CV </a>
       </div>
     </div>
   </section>

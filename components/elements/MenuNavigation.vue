@@ -47,6 +47,16 @@
           </li>
           <li class="navigation-li">
             <nuxt-link
+              :to="{ path: '/', hash: '#portafolio' }"
+              class="navigation-link"
+              @click.native="goToSection($event)"
+              data-hash="#portafolio"
+            >
+              Portafolio
+            </nuxt-link>
+          </li>
+          <li class="navigation-li">
+            <nuxt-link
               :to="{ path: '/', hash: '#contactame' }"
               class="navigation-link"
               @click.native="goToSection($event)"
@@ -56,7 +66,7 @@
             </nuxt-link>
           </li>
           <li class="navigation-li">
-            <nuxt-link :to="{ path: 'blog' }" class="navigation-link" @click.native="goToSection($event)">
+            <nuxt-link :to="{ name: 'blog' }" class="navigation-link" @click.native="goToSection($event)">
               Últimos articulos
             </nuxt-link>
           </li>

@@ -1,11 +1,12 @@
 ---
-title: Getting started
+title: Hola mundo
 description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
-img: /img/main.jfif
+image: /img/main.jfif
 author: Joseph Flores
+published: 2020-12-27T17:40:34.377Z
 createdAt: 2020-12-27T17:40:34.377Z
 updatedAt: 2020-12-27T17:40:34.377Z
-categories: Free, Vue JS
+tags: ['Bienvenida']
 ---
 
 # Foobar
