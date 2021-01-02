@@ -48,12 +48,12 @@ export default {
         '@nuxtjs/google-fonts',
         '@nuxtjs/style-resources',
         '@nuxtjs/moment',
-        '@nuxtjs/gtm',
+        '@nuxtjs/google-analytics',
         '@nuxtjs/dotenv',
     ],
 
-    gtm: {
-        id: process.env.GOOGLE_TAG_ID,
+    googleAnalytics: {
+        id: process.env.GOOGLE_ANALYTICS_ID,
     },
     moment: {
         locales: ['es'],
