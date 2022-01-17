@@ -255,12 +255,12 @@ section {
 
 .reveal {
     position: relative;
-    visibility: hidden;
-    overflow: hidden;
+    // visibility: hidden;
+    // overflow: hidden;
     display: block;
     &-style {
         visibility: hidden;
-        overflow: hidden;
+        // overflow: hidden;
     }
     &-box {
         // overflow: hidden;
@@ -270,7 +270,7 @@ section {
 }
 
 [class*="reveal"] {
-    opacity: 0;
+    // opacity: 0;
 }
 
 .nuxt-content {

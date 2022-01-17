@@ -88,9 +88,9 @@ export default {
     }),
   },
   async mounted() {
-    setTimeout(() => {
-      this.initPage()
-    }, 1000)
+    // setTimeout(() => {
+    //   this.initPage()
+    // }, 1000)
   },
 }
 </script>

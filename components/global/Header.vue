@@ -60,9 +60,9 @@
                 Contactáme
               </nuxt-link>
             </li>
-            <li class="menu-item menu item-page nav-li cursor-link">
+            <!-- <li class="menu-item menu item-page nav-li cursor-link">
               <nuxt-link :to="{ name: 'blog' }" class="navigation-link"> Blog </nuxt-link>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>

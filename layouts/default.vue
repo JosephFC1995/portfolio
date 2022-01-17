@@ -1,8 +1,8 @@
 <template>
   <div class="viewport">
-    <MenuNavigation />
+    <!-- <MenuNavigation /> -->
     <LoadingScreen />
-    <ChangeRouter />
+    <!-- <ChangeRouter /> -->
     <div class="grillas">
       <div class="container mx-auto">
         <div class="grid grid-cols-4">
@@ -14,19 +14,19 @@
       </div>
     </div>
     <div id="scroll-container" class="scroll-container" ref="scrollContainer">
-      <client-only>
-        <smooth-scrollbar :options="{ renderByPixels: true, damping: 0.05 }" id="content-scroll-container">
-          <Header />
-          <div class="container mx-auto">
-            <Nuxt />
-          </div>
-          <Footer />
-        </smooth-scrollbar>
-      </client-only>
+      <!-- <client-only>
+        <smooth-scrollbar :options="{ renderByPixels: true, damping: 0.05 }" id="content-scroll-container"> -->
+      <Header />
+      <div class="container mx-auto">
+        <Nuxt />
+      </div>
+      <Footer />
+      <!-- </smooth-scrollbar>
+      </client-only> -->
     </div>
-    <div id="follower">
+    <!-- <div id="follower">
       <div class="cursor"></div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -149,13 +149,12 @@ export default {
       }
       e.preventDefault()
     })
-    // window.addEventListener('load', _self.onLoadGsapSmothScroll())
+    window.addEventListener('load', _self.onLoadGsapSmothScroll())
     // grilla
     let grillas = document.querySelectorAll('.grid-line')
     grillas.forEach((grilla, index) => {
       grilla.classList.add('up')
     })
-
     //TweenLite.set('.mask-water-title.mask-right .block', { xPercent: 0, right: '0', position: 'absolute' })
     //TweenLite.set('.mask-water-title.mask-left .block', { xPercent: 0, left: '0', position: 'absolute' })
   },
@@ -215,15 +214,15 @@ body {
 //   right: 0;
 //   bottom: 0;
 // }
-.scroll-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.scrollbar-track {
-  background: transparent !important;
-  display: none !important;
-}
+// .scroll-container {
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+// }
+// .scrollbar-track {
+//   background: transparent !important;
+//   display: none !important;
+// }
 </style>

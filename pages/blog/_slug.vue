@@ -78,11 +78,7 @@ export default {
     },
   },
   created() {},
-  async mounted() {
-    setTimeout(() => {
-      this.initPage()
-    }, 1000)
-  },
+  async mounted() {},
 }
 </script>
 

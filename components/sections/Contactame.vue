@@ -5,20 +5,6 @@
     </div>
     <div class="content-columns grid grid-cols-1 md:grid-cols-2 mt-10 gap-4 reveal-content">
       <div class="column-left">
-        <div class="contact-list mb-16">
-          <div class="contact-ico">
-            <UilPhone size="35px" class="mb-3" />
-          </div>
-          <div class="contact-text mb-2">Mi teléfono</div>
-          <div class="contact-value">+51 997 475 659</div>
-        </div>
-        <div class="contact-list">
-          <div class="contact-ico">
-            <UilEnvelope size="35px" class="mb-3" />
-          </div>
-          <div class="contact-text mb-2">Mi correo electrónico</div>
-          <div class="contact-value">josefc9512@gmail.com</div>
-        </div>
       </div>
       <div class="column-right">
         <vue-form :state="formstate" @submit.prevent="onSubmit" class="grid grid-cols-2 gap-4 form-general mt-8">
