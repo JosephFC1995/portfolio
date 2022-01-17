@@ -14,19 +14,19 @@ export default {
             let gsap_e = gsap
             gsap_e.registerPlugin(ScrollTrigger)
 
-            var scrollbar = Scrollbar.get(document.querySelector('#content-scroll-container'))
-
-            ScrollTrigger.scrollerProxy('#content-scroll-container', {
-                scrollTop(value) {
-                    if (arguments.length) {
-                        scrollbar.scrollTop = value
-                    }
-                    return scrollbar.scrollTop
-                },
-            })
-
-            scrollbar.addListener(ScrollTrigger.update)
-            ScrollTrigger.defaults({ scroller: document.querySelector('#content-scroll-container') })
+            // var scrollbar = Scrollbar.get(document.querySelector('#content-scroll-container'))
+            //
+            // ScrollTrigger.scrollerProxy('#content-scroll-container', {
+            //     scrollTop(value) {
+            //         if (arguments.length) {
+            //             scrollbar.scrollTop = value
+            //         }
+            //         return scrollbar.scrollTop
+            //     },
+            // })
+            //
+            // scrollbar.addListener(ScrollTrigger.update)
+            // ScrollTrigger.defaults({ scroller: document.querySelector('#content-scroll-container') })
 
             //
             const allTitleSection = document.querySelectorAll('.mask-water-title')

@@ -1,7 +1,7 @@
 <template>
   <div class="viewport">
     <!-- <MenuNavigation /> -->
-    <LoadingScreen />
+<!--    <LoadingScreen />-->
     <!-- <ChangeRouter /> -->
     <div class="grillas">
       <div class="container mx-auto">
@@ -16,7 +16,6 @@
     <div id="scroll-container" class="scroll-container" ref="scrollContainer">
       <!-- <client-only>
         <smooth-scrollbar :options="{ renderByPixels: true, damping: 0.05 }" id="content-scroll-container"> -->
-      <Header />
       <div class="container mx-auto">
         <Nuxt />
       </div>
@@ -112,43 +111,43 @@ export default {
   },
   mounted() {
     let _self = this
-    this.hiddenLoadingScreen()
-    gsap.set('#follower .cursor', { transformOrigin: 'center', scale: 1 })
-    window.addEventListener('mousemove', (e) => {
-      gsap.to('#follower', 0.6, {
-        x: e.clientX,
-        y: e.clientY,
-        ease: 'out',
-      })
-    })
-    document.body.addEventListener('mouseover', (e) => {
-      var t = e.target
-      if (t.classList.contains('cursor-link')) {
-        gsap.to('#follower .cursor', {
-          scale: 2,
-          ease: 'in',
-        })
-      } else if (t.classList.contains('cursor-hidden')) {
-        gsap.to('#follower .cursor', {
-          scale: 2,
-          ease: 'out',
-        })
-        TweenLite.to('#follower .cursor', {
-          background: 'transparent',
-        })
-      } else if (t.classList.contains('cursor-zoom')) {
-        gsap.to('#follower .cursor', {
-          scale: 2,
-          ease: 'out',
-        })
-      } else {
-        gsap.to('#follower .cursor', { scale: 1, ease: 'out' })
-        TweenLite.to('#follower .cursor', {
-          background: 'white',
-        })
-      }
-      e.preventDefault()
-    })
+    // this.hiddenLoadingScreen()
+    // gsap.set('#follower .cursor', { transformOrigin: 'center', scale: 1 })
+    // window.addEventListener('mousemove', (e) => {
+    //   gsap.to('#follower', 0.6, {
+    //     x: e.clientX,
+    //     y: e.clientY,
+    //     ease: 'out',
+    //   })
+    // })
+    // document.body.addEventListener('mouseover', (e) => {
+    //   var t = e.target
+    //   if (t.classList.contains('cursor-link')) {
+    //     gsap.to('#follower .cursor', {
+    //       scale: 2,
+    //       ease: 'in',
+    //     })
+    //   } else if (t.classList.contains('cursor-hidden')) {
+    //     gsap.to('#follower .cursor', {
+    //       scale: 2,
+    //       ease: 'out',
+    //     })
+    //     TweenLite.to('#follower .cursor', {
+    //       background: 'transparent',
+    //     })
+    //   } else if (t.classList.contains('cursor-zoom')) {
+    //     gsap.to('#follower .cursor', {
+    //       scale: 2,
+    //       ease: 'out',
+    //     })
+    //   } else {
+    //     gsap.to('#follower .cursor', { scale: 1, ease: 'out' })
+    //     TweenLite.to('#follower .cursor', {
+    //       background: 'white',
+    //     })
+    //   }
+    //   e.preventDefault()
+    // })
     window.addEventListener('load', _self.onLoadGsapSmothScroll())
     // grilla
     let grillas = document.querySelectorAll('.grid-line')
